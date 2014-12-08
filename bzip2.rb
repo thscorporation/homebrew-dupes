@@ -15,7 +15,7 @@ class Bzip2 < Formula
 
   test do
     testfilepath = testpath + "sample_in.txt"
-    zipfilepath = testfilepath + ".bz2"
+    zipfilepath = testpath + "sample_in.txt.bz2"
 
     print testfilepath + "\n"
     File.open(testfilepath, 'w') { |file| file.write("TEST CONTENT") }
