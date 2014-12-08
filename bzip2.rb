@@ -14,9 +14,7 @@ class Bzip2 < Formula
   end
 
   test do
-    testfilepath = File.path(testpath) +
-      File.path(File::Separator) +
-      "sample_in.txt"
+    testfilepath = testpath + "sample_in.txt"
     zipfilepath = testfilepath + ".bz2"
 
     print testfilepath + "\n"
