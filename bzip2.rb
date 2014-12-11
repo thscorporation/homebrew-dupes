@@ -9,7 +9,7 @@ class Bzip2 < Formula
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
-    system "mkdir", "-p", man
+    mkdir_p man
     system "mv", "#{prefix}/man", man
   end
 
