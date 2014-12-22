@@ -15,8 +15,8 @@ end
 
 class Gdb < Formula
   homepage "http://www.gnu.org/software/gdb/"
-  url "http://ftpmirror.gnu.org/gdb/gdb-7.8.1.tar.xz"
-  mirror "http://ftp.gnu.org/gnu/gdb/gdb-7.8.1.tar.xz"
+  url "ftp://ftp.gnu.org/gnu/gdb/gdb-7.8.1.tar.xz"
+  mirror "http://ftpmirror.gnu.org/gdb/gdb-7.8.1.tar.xz"
   sha1 "f597f6245898532eda9e85832b928e3416e0fd34"
 
   depends_on "pkg-config" => :build
