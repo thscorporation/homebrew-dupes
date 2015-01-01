@@ -5,6 +5,13 @@ class Openssh < Formula
   url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.7p1.tar.gz"
   version "6.7p1"
   sha256 "b2f8394eae858dabbdef7dac10b99aec00c95462753e80342e530bbb6f725507"
+  bottle do
+    root_url "https://downloads.sf.net/project/machomebrew/Bottles/dupes"
+    sha1 "efca884e325edb2a4b1d2a31de9482774cb6d0d2" => :yosemite
+    sha1 "3602a666610b2fe42de3aca70ace60442f82dd6e" => :mavericks
+    sha1 "b57df60a183e3391341e270116420208c510be9e" => :mountain_lion
+  end
+
   revision 1
 
   option "with-keychain-support", "Add native OS X Keychain and Launch Daemon support to ssh-agent"
