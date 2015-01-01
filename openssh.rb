@@ -28,7 +28,7 @@ class Openssh < Formula
 
   # Patch for SSH tunnelling issues caused by launchd changes on Yosemite
   patch do
-    url "https://trac.macports.org/export/128279/trunk/dports/net/openssh/files/launchd.patch"
+    url "https://gist.githubusercontent.com/jbergler/c9bba580d27137a793d8/raw/4bbb60f12df413ba43af735f608cd311c4338239/launchd.patch"
     sha1 "e35731b6d0e999fb1d58362cda2574c0d1efed78"
   end
 
