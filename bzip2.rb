@@ -5,31 +5,23 @@ class Bzip2 < Formula
   url "http://www.bzip.org/1.0.6/bzip2-1.0.6.tar.gz"
   sha1 "3f89f861209ce81a6bab1fd1998c0ef311712002"
 
-  keg_only "bzip2 contains bziplib.h which shadows a system header"
+  keg_only :provided_by_osx
 
   def install
     system "make", "install", "PREFIX=#{prefix}"
     mkdir_p man
-    system "mv", "#{prefix}/man", man
+    mv "#{prefix}/man", man
   end
 
   test do
     testfilepath = testpath + "sample_in.txt"
     zipfilepath = testpath + "sample_in.txt.bz2"
 
-    print testfilepath + "\n"
-    File.open(testfilepath, 'w') { |file| file.write("TEST CONTENT") }
+    testfilepath.write "TEST CONTENT"
 
-    system "bzip2", testfilepath
-    system "bunzip2", zipfilepath
+    system "#{bin}/bzip2", testfilepath
+    system "#{bin}/bunzip2", zipfilepath
 
-    content = ""
-    File.open(testfilepath, 'r') { |file| content = file.read() }
-
-    if content == "TEST CONTENT" then
-      system "true"
-    else
-      systen "false"
-    end
+    assert_equal "TEST CONTENT", testfilepath.read
   end
 end
