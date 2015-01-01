@@ -2,9 +2,9 @@ require "formula"
 
 class Openssh < Formula
   homepage "http://www.openssh.com/"
-  url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.6p1.tar.gz"
-  version "6.6p1"
-  sha256 "48c1f0664b4534875038004cc4f3555b8329c2a81c1df48db5c517800de203bb"
+  url "http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-6.7p1.tar.gz"
+  version "6.7p1"
+  sha256 "b2f8394eae858dabbdef7dac10b99aec00c95462753e80342e530bbb6f725507"
   revision 1
 
   option "with-keychain-support", "Add native OS X Keychain and Launch Daemon support to ssh-agent"
@@ -16,8 +16,8 @@ class Openssh < Formula
 
   if build.with? "keychain-support"
     patch do
-      url "https://gist.githubusercontent.com/Bluerise/9400603/raw/28b1cabcc468ce67a41b866eec03032d814a8c18/OpenSSH+6.6p1+keychain+support"
-      sha1 "32e6527d7d70b3c0c9a6bd18ddd0b13ed939ea92"
+      url "https://gist.githubusercontent.com/jbergler/ebaa38fcdda2e15f25a1/raw/ec0da92e640e2cc89f95902f20d42e0cc952195a/0002-Apple-keychain-integration-other-changes.patch"
+      sha1 "ceafaee8814d4ce7477d2c75cddc7e3b209f038a"
     end
   end
 
