@@ -2,8 +2,8 @@ require "formula"
 
 class Whois < Formula
   homepage "https://packages.debian.org/sid/whois"
-  url "http://ftp.us.debian.org/debian/pool/main/w/whois/whois_5.2.2.tar.xz"
-  sha1 "4438b9940b27b67459c82e4e6865a087e491788d"
+  url "http://ftp.us.debian.org/debian/pool/main/w/whois/whois_5.2.3.tar.xz"
+  sha1 "6e9738e5b181ed600567d2ddb3b5e872d08201f0"
 
   def install
     # autodie was not shipped with the system perl 5.8
@@ -21,6 +21,6 @@ class Whois < Formula
   end
 
   test do
-    system "#{bin}/whois"
+    system "#{bin}/whois --version"
   end
 end
