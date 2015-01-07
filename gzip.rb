@@ -1,10 +1,9 @@
-require 'formula'
-
 class Gzip < Formula
-  homepage 'http://www.gnu.org/software/gzip'
-  url 'http://ftpmirror.gnu.org/gzip/gzip-1.6.tar.gz'
-  mirror 'http://ftp.gnu.org/gnu/gzip/gzip-1.6.tar.gz'
-  sha1 '7ec6403090b3eaeb53ef017223cb8034eebc1f49'
+  homepage "https://www.gnu.org/software/gzip"
+  url "http://ftpmirror.gnu.org/gzip/gzip-1.6.tar.gz"
+  mirror "https://ftp.gnu.org/gnu/gzip/gzip-1.6.tar.gz"
+  mirror "http://mirror.clarkson.edu/gnu/gzip/gzip-1.6.tar.gz"
+  sha1 "7ec6403090b3eaeb53ef017223cb8034eebc1f49"
 
   # Add support for --rsyncable option
   patch do
@@ -14,10 +13,13 @@ class Gzip < Formula
 
   def install
     system "./configure", "--disable-dependency-tracking", "--prefix=#{prefix}"
-    system "make install"
+    system "make", "install"
   end
 
   test do
-    system "#{bin}/gzip", "-V"
+    (testpath/"foo").write "test"
+    system "#{bin}/gzip", "foo"
+    system "#{bin}/gzip", "-t", "foo.gz"
+    assert_equal "test", shell_output("#{bin}/gunzip -c foo")
   end
 end
