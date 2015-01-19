@@ -9,9 +9,9 @@ class FileFormula < Formula
 
   bottle do
     root_url "https://downloads.sf.net/project/machomebrew/Bottles/dupes"
-    sha1 "0a1183e6d6f87c4982bc7a9dde8ad4f78adb4a56" => :yosemite
-    sha1 "825f9273ddbc98be68bc5ce238b5456199c06db8" => :mavericks
-    sha1 "be3cf9d56e3a2bde546b16b00b62cb4c71de3d04" => :mountain_lion
+    sha1 "82f413eec4ac2c36ea77028b5d0c615bdbb9886c" => :yosemite
+    sha1 "58d0aba801d97081ee9c55d37026658186eaeee0" => :mavericks
+    sha1 "695ef766c516ce3b122e0a8b3975bb122094a93a" => :mountain_lion
   end
 
   keg_only :provided_by_osx
